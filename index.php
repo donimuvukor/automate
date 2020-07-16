@@ -1,25 +1,36 @@
 <?php
 	//Start session
 	session_start();
+
+	$host = 'localhost';
+	$username = 'postgres';
+	$password = 'donimuvukor@postgres';
+	$dbname = 'automate';
 	
 	//Set page instance id
 	if(!isset($_SESSION['page_instance_ids']) || (count($_SESSION['page_instance_ids']) > 5)){
 		$_SESSION['page_instance_ids'] = array();
 	}
 	
-	require_once('connectvars.php');
+	//require_once('connectvars.php');
 	require_once('sitevars.php');
 	require_once('functions.php');
 	
-	//Request form submission, so validate form	
-	if(isset($_POST['submit'])){
+	//If submit button is clicked, create DB connection and get form data	
+	if(isset($_POST['submit']))
+	{
 		
-		// Connect to the database
-    	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		/*Connect to the database
+		$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		*/
+
+		$dbc = pg_connect("host=$host dbname=$dbname user=$username password=$password");
 		
-		// Get the form data
-    	
+		/*Get the form data
 		$email = mysqli_real_escape_string($dbc, trim($_POST['email']));
+		*/
+
+		$email = pg_escape_string($dbc, trim($_POST['email']));
 		
 		
 		$field_names = array("$email");
@@ -27,12 +38,13 @@
 		$field_labels = array("E-mail");
 							 
 		
-		$field_name_label = array("$email" => "E-mail");
+		$fields = array("$email" => "E-mail");
 		
-		//Validate form
-		if( $form_errors = validate_form( $field_names, $field_labels ) ){		
+		//If validation fails, retrieve errors
+		if($form_errors = validate_form($field_names, $field_labels))
+		{		
 			
-			//Form submitted with errors; show errors and show form
+			//Display form again along with validation errors
 			echo '<div class = "error_php">';
 			for($j=0; $j<count($form_errors); $j++){ echo "$form_errors[$j]"."<br >"; }
 			echo '</div>';
@@ -68,7 +80,6 @@
           <td>
           <div id="alumniform_email_errorloc" class="error_strings"></div>
           <input type="email" id="email" name="email" value="<?php if (!empty($email)) echo $email; ?>" >
-          <span class="required">*</span>
           </td>
         </tr>
         
@@ -97,15 +108,31 @@
         <?php
 		}
 		else{
-			//Form valid, process form if request != refresh
+			//Check if submission == page refresh/reload
 			$page_id_index = array_search($_POST['page_instance_id'], $_SESSION['page_instance_ids']);
-			if($page_id_index !== false){
+
+			if($page_id_index !== false)
+			{
 				unset($_SESSION['page_instance_ids'][$page_id_index]);
 
-				//$pic_path = file path of new picture name
-				process_form($dbc, $email);
-				
-				//Confirm success with the user
+				//Process form
+				if(process_form($dbc, $email) > 0) 
+				{
+				//Display error message
+				echo '<link rel="stylesheet" href="index.css" >';
+				echo '<div id="thanks"><h2>THIS EMAIL HAS ALREADY BEEN SIGNED UP!</h2></div>';
+        		echo '<div id="success">';
+            		echo '<div id="data">';
+              			echo '<ul>';
+							echo '<li><strong><span class="label">E-mail:</span></strong><br >'.
+                	 			 '<span class="text">'.$email.'</span></li>';
+              			echo '</ul>';
+            	echo'</div>';
+				echo'</div>';
+				}
+				else 
+				{
+				//Display success message
 				echo '<link rel="stylesheet" href="index.css" >';
 				echo '<div id="thanks"><h2>THANK YOU!</h2></div>';
         		echo '<div id="success">';
@@ -116,12 +143,16 @@
               			echo '</ul>';
             	echo'</div>';
        			echo'</div>';
+				}
 	   
-	   			//Close the database connection
-	   			mysqli_close($dbc);
+	   			/*Close database connection
+				mysqli_close($dbc);
+				*/
+				pg_close($dbc);
 			}
-			else{
-				//Refresh detected, redirect back to form
+			else
+			{
+				//Page refresh/reload detected; redirect to form
 				header("Location: ".$_SERVER["REQUEST_URI"]);
 				exit;
 			}
@@ -129,10 +160,12 @@
 		}
 		
 	}
-	else{
-		//Form wasn't submitted, so display the form
+	else
+	{
+		//Form was not submitted; display form
 		$_SESSION['page_instance_ids'][] = uniqid('',true);
-		?>	
+		?>
+			
 <!doctype html>
 <html>
 <head>
