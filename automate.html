@@ -16,11 +16,11 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <!-- Core theme CSS-->
         <link href="css/automate.css" rel="stylesheet" />
-        <!-- Splide CSS 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-        -->
+        <!-- Glide JS  -->
+        <link rel="stylesheet" href="assets/glide-3.4.1/dist/css/glide.core.min.css" >
+        <link rel="stylesheet" href="assets/glide-3.4.1/dist/css/glide.theme.min.css" >
         <!-- AutoMate Favicon -->
-        <link rel="icon" href="img/automate-logo.png" sizes="any" type="image/svg+xml">
+        <link rel="icon" href="img/automate-w.png" sizes="any" type="image/svg+xml">
         <title>AutoMate</title>
     </head>
 
@@ -33,7 +33,7 @@
 
                 <!-- Brand Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="img/automate-logo.png" alt="AutoMate Logo">
+                    <img src="img/automate-w.png" alt="AutoMate Logo">
                 </a>
                 <!-- Brand Logo -->
 
@@ -102,7 +102,7 @@
                                         <input type="email" class="form-control" placeholder="Email"
                                                aria-label="Recipient's username" aria-describedby="submit-btn">
                                         <div class="input-group-append">
-                                            <span id="submit-btn" class="input-group-text" >
+                                            <span id="submit-btn-top" class="input-group-text" >
                                                 Get Early Access
                                             </span>
                                         </div>
@@ -159,9 +159,9 @@
                         <!-- App Description -->
                         <div class="col-md-5 offset-md-6">
 
-                            <p>We help build</p> 
+                            <p>We help you build</p> 
                             <p>Strong Relationships</p>
-                            <p>for you</p>
+                            <p><!-- for you --></p>
 
                             <p class="text-justify">
                                 AutoMate is the app that provides you with perfect replies to your partner 
@@ -171,7 +171,7 @@
                                 comeback. It also records conversations with your partner so you can listen to 
                                 them again and go over parts you may have missed. 
                             </p>
-                            <p class="text-justify"> 
+                            <p class="text-right"> 
                                 The goal of AutoMate is to ensure communication between 
                                 you and your partner is not just great, but perfect.
                             </p>
@@ -184,7 +184,7 @@
                     <div id="app-homescreen" class="row mx-0">
 
                         <!-- App Homescreen -->
-                        <div class="col-md-8">
+                        <div class="col-md-6 offset-md-1">
 
                             <img id="homescreen-img" class="img-fluid" 
                                 src="img/homescreen.png" alt="App Homescreen" >
@@ -242,7 +242,7 @@
                                     <h5 class="feature-header">Conversing With AutoMate</h5>
                                     <p class="feature-body">
                                         Having conversations without the right words can be exhausting. 
-                                        with this feature you get to say perfect answers to tricky questions.
+                                        with this feature you can give perfect answers to tricky questions.
                                     </p>
                                 </div>
 
@@ -261,8 +261,8 @@
                                 <div class="col-md-10">
                                     <h5 class="feature-header">Diary With AutoMate</h5>
                                     <p class="feature-body">
-                                        Having conversations without the right words can be exhausting. 
-                                        with this feature you get to say perfect answers to tricky questions.
+                                        You can keep your personal diary with AutoMate.  
+                                        You can also music playlist recommendations to soothe your mood.
                                     </p>
                                 </div>
 
@@ -287,8 +287,9 @@
                                 <div class="col-md-10">
                                     <h5 class="feature-header">AutoMate Record</h5>
                                     <p class="feature-body">
-                                        Having conversations without the right words can be exhausting. 
-                                        with this feature you get to say perfect answers to tricky questions.
+                                        AutoMate allows you to record conversatios with your partner. 
+                                        No need to worry if you missed any part of the conversation;
+                                        just play it back.
                                     </p>
                                 </div>
 
@@ -307,8 +308,8 @@
                                 <div class="col-md-10">
                                     <h5 class="feature-header">AutoMate Library</h5>
                                     <p class="feature-body">
-                                        Having conversations without the right words can be exhausting. 
-                                        with this feature you get to say perfect answers to tricky questions.
+                                        AutoMate keeps records of all conversations you have ever had with your partner. 
+                                        You can even have caht with automate on how to build a strong relationship.
                                     </p>
                                 </div>
 
@@ -327,7 +328,87 @@
             <!-- App Screens -->
             <div id="screens">
 
+                <div id="screens-inner">
 
+                    <!-- Header -->
+                    <div id="intro-header">
+
+                        <div class="row mx-0">
+                            <!-- Header Text -->
+                            <div class="col-md-6 offset-md-3 text-center section-header">
+                                <h2>How AutoMate Looks</h2>
+                            </div>
+                            <!-- Header Text -->
+
+                            <!-- Header Subtext -->
+                            <div class="col-md-6 offset-md-3 text-center section-subtext">
+                                <h4>Catch a glimpse of what AutoMate looks like</h4>
+                            </div>
+                            <!-- Header Subtext -->
+                        </div>
+
+                    </div>
+                    <!-- Header -->
+
+                    <!-- App Screens Slider -->
+                    <div id="screen-slider" class="row mx-0">
+
+                        <div class="col-md-9 offset-md-2">
+
+                            <div id="app-screen-glide" class="glide">
+
+                                <!-- Slides -->
+                                <div class="glide__track" data-glide-el="track">
+    
+                                  <ul class="glide__slides">
+    
+                                    <li class="glide__slide">
+                                        <img class="img-fluid" src="img/screen-1.png">
+                                    </li>
+                                    <li class="glide__slide">
+                                        <img class="img-fluid" src="img/screen-2.png">
+                                    </li>
+                                    <li class="glide__slide">
+                                        <img class="img-fluid" src="img/screen-3.png">
+                                    </li>
+                                    <li class="glide__slide">
+                                        <img class="img-fluid" src="img/screen-4.png">
+                                    </li>
+                                    <li class="glide__slide">
+                                        <img class="img-fluid" src="img/screen-5.png">
+                                    </li>
+                                    <li class="glide__slide">
+                                        <img class="img-fluid" src="img/screen-6.png">
+                                    </li>
+    
+                                  </ul>
+
+                                <!-- Bullet Slide Navigation -->
+                                <div class="glide__bullets" data-glide-el="controls[nav]">
+                                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                                </div>
+                                <!-- Bullet Slide Navigation -->
+    
+                                </div>
+                                <!-- Slides -->
+    
+                                <!-- Slide Controls 
+                                <div class="glide__arrows" data-glide-el="controls">
+                                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                                </div>
+                                 Slide Controls -->
+    
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- App Screens Slider -->
+
+                </div>
 
             </div>
             <!-- App Screens -->
@@ -335,7 +416,56 @@
             <!-- Countdown -->
             <div id="countdown">
 
+                <div id="countdown-inner">
 
+                    <!-- Countdown Content -->
+                    <div class="row mx-0 text-center justify-content-center">
+
+                        <div id="days" class="col-md-1">
+                            <h5 class="countdown-header">08</h5>
+                            <h6 class="countdown-body">Days</h6>
+                        </div>
+                        <div id="hours" class="col-md-1">
+                            <h5 class="countdown-header">15</h5>
+                            <h6 class="countdown-body">Hours</h6>
+                        </div>
+                        <div id="minutes" class="col-md-1">
+                            <h5 class="countdown-header">33</h5>
+                            <h6 class="countdown-body">Minutes</h6>
+                        </div>
+                        <div id="seconds" class="col-md-1">
+                            <h5 class="countdown-header">48</h5>
+                            <h6 class="countdown-body">Seconds</h6>
+                        </div>
+
+                    </div>
+                    <!-- Countdown Content -->
+
+                    <div id="launching-soon" class="text-center">
+                        <h1>Launching Soon</h1>
+                    </div>
+
+                    <div class="row mx-0">
+
+                        <!-- Early Access Email -->
+                        <div class="col-md-6 offset-md-3 text-center">
+                            <form>
+                                <div id="join-email" class="input-group">
+                                    <input type="email" class="form-control" placeholder="Email"
+                                           aria-label="Recipient's username" aria-describedby="submit-btn">
+                                    <div class="input-group-append">
+                                        <span id="submit-btn-bottom" class="input-group-text" >
+                                            Get Early Access
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Early Access Email -->
+                        
+                    </div>
+
+                </div>
 
             </div>
             <!-- Countdown -->
@@ -345,14 +475,62 @@
 
     <footer>
 
+        <div id="footer-inner">
 
+            <!-- Top Row -->
+            <div class="row mx-0">
+
+                <div class="col-md-3 offset-md-1">
+                    <img src="img/automate-r.png" alt="AutoMate Logo">
+                </div>
+
+                <div class="col-md-3 offset-md-5">
+
+                    <div class="row mx-0">
+
+                        <div class="col-md-2 text-center">
+                            <a href="#">
+                                <img src="img/twitter-r.svg">
+                            </a>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <a href="#">
+                                <img src="img/facebook-r.svg">
+                            </a>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <a href="#">
+                                <img src="img/instagram-r.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Top Row -->
+
+            <!-- Bottom Row -->
+            <div class="row mx-0">
+                <div id="copyright" class="col-md-3 offset-md-1">
+                    &copy;2020 AutoMate. All Rights Reserved.
+                </div>
+                <div id="terms" class="col-md-1">
+                    <a href="#">Terms</a>
+                </div>
+                <div id="privacy" class="col-md-1">
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+            <!-- Bottom Row -->
+
+        </div>
 
     </footer>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/ae3427d2c7.js" crossorigin="anonymous"></script>
-    <!-- Splide JS (for Sliders) -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <!-- Glide JS  -->
+    <script src="assets/glide-3.4.1/dist/glide.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <!-- Popper.js -->
