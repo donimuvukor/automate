@@ -1,9 +1,3 @@
-<?php 
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +9,12 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <!-- Core theme CSS-->
-        <link href="css/automate.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
         <!-- Glide JS  -->
         <link rel="stylesheet" href="assets/glide-3.4.1/dist/css/glide.core.min.css" >
         <link rel="stylesheet" href="assets/glide-3.4.1/dist/css/glide.theme.min.css" >
+        <!-- AOS -->
+        <link rel="stylesheet" href="assets/aos-master/dist/aos.css" >
         <!-- AutoMate Favicon -->
         <link rel="icon" href="img/automate-w.png" sizes="any" type="image/svg+xml">
         <title>AutoMate</title>
@@ -83,7 +79,7 @@
                     <!-- Masthead Content -->
                     <div id="masthead-content" class="text-center">
 
-                        <h1>Never have the right answers for your Partner?</h1>
+                        <h1 data-aos="flip-left" data-aos-duration="1000">Never have the right answers for your Partner?</h1>
                         <h3>
                             <p>
                                 Want to spice things up, 'Read' the room & Sound like you really care?
@@ -97,17 +93,27 @@
 
                             <!-- Early Access Email -->
                             <div class="col-md-6 offset-md-3 text-center">
-                                <form>
-                                    <div id="join-email" class="input-group">
-                                        <input type="email" class="form-control" placeholder="Email"
-                                               aria-label="Recipient's username" aria-describedby="submit-btn">
-                                        <div class="input-group-append">
-                                            <span id="submit-btn-top" class="input-group-text" >
-                                                Get Early Access
+
+                                <form id="form-top" name="early-access-form-top" method="post" 
+                                      action="email.php" data-aos="fade-up" data-aos-duration="2500">
+                                      
+                                    <div id="" class="input-group">
+                                        <input name="email-top" type="email" class="form-control" 
+                                               placeholder="Email" aria-label="Subscriber's email" 
+                                               aria-describedby="submit-btn-top">
+
+                                        <div class="input-group-addon">
+                                            <span class="input-group-btn" >
+                                                <button id="submit-btn-top" name="submit-btn-top"  
+                                                        type="submit">
+                                                        Get Early Access
+                                                </button>
                                             </span>
                                         </div>
+
                                     </div>
                                 </form>
+
                             </div>
                             <!-- Early Access Email -->
                             
@@ -140,7 +146,7 @@
                         <div class="row mx-0">
                             <!-- Header Text -->
                             <div class="col-md-6 offset-md-3 text-center section-header">
-                                <h2>Bland, Thoughtless, Insensitive...</h2>
+                                <h2 >Bland, Thoughtless, Insensitive...</h2>
                             </div>
                             <!-- Header Text -->
 
@@ -159,22 +165,24 @@
                         <!-- App Description -->
                         <div class="col-md-5 offset-md-6">
 
-                            <p>We help you build</p> 
-                            <p>Strong Relationships</p>
-                            <p><!-- for you --></p>
-
-                            <p class="text-justify">
-                                AutoMate is the app that provides you with perfect replies to your partner 
-                                during a conversation. Using state of the art voice pattern recognition 
-                                algorithms, it senses your partner's mood, taking note of their tone 
-                                and the actual words spoken, and gives you the perfect, situation appropriate
-                                comeback. It also records conversations with your partner so you can listen to 
-                                them again and go over parts you may have missed. 
-                            </p>
-                            <p class="text-right"> 
-                                The goal of AutoMate is to ensure communication between 
-                                you and your partner is not just great, but perfect.
-                            </p>
+                            <div data-aos="fade-right" data-aos-duration="1000">
+                                <p>We help you build</p> 
+                                <p>Strong Relationships</p>
+                                <p><!-- for you --></p>
+    
+                                <p class="text-justify">
+                                    AutoMate is the app that provides you with perfect replies to your partner 
+                                    during a conversation. Using state of the art voice pattern recognition 
+                                    algorithms, it senses your partner's mood, taking note of their tone 
+                                    and the actual words spoken, and gives you the perfect, situation appropriate
+                                    comeback. It also records conversations with your partner so you can listen to 
+                                    them again and go over parts you may have missed. 
+                                </p>
+                                <p class="text-right"> 
+                                    The goal of AutoMate is to ensure communication between 
+                                    you and your partner is not just great, but perfect.
+                                </p>
+                            </div>
 
                         </div>
                         <!-- App Description -->
@@ -186,8 +194,8 @@
                         <!-- App Homescreen -->
                         <div class="col-md-6 offset-md-1">
 
-                            <img id="homescreen-img" class="img-fluid" 
-                                src="img/homescreen.png" alt="App Homescreen" >
+                            <img id="homescreen-img" class="img-fluid" src="img/homescreen.png" 
+                                 alt="App Homescreen" data-aos="fade-up-right" data-aos-duration="1000">
 
                         </div>
                         <!-- App Homescreen -->
@@ -213,7 +221,7 @@
                                 <h2>App Features</h2>
                             </div>
                             <!-- Header Text -->
-
+                        
                             <!-- Header Subtext -->
                             <div class="col-md-6 offset-md-3 text-center section-subtext">
                                 <h4>
@@ -232,7 +240,7 @@
 
                         <div class="col-md-4 offset-md-1">
 
-                            <div id="converse" class="row">
+                            <div id="converse" class="row" data-aos="zoom-in-right" data-aos-duration="1000">
 
                                 <div class="col-md-2">
                                     <img src="img/converse.png" alt="Conversing with AutoMate" >
@@ -252,7 +260,7 @@
 
                         <div class="col-md-4 offset-md-2">
 
-                            <div id="diary" class="row">
+                            <div id="diary" class="row" data-aos="zoom-in-left" data-aos-duration="1000">
 
                                 <div class="col-md-2">
                                     <img src="img/diary.png" alt="Conversing with AutoMate" >
@@ -278,13 +286,13 @@
 
                         <div class="col-md-4 offset-md-1">
 
-                            <div id="record" class="row">
+                            <div id="record" class="row" data-aos="zoom-in-right" data-aos-duration="1000">
 
                                 <div class="col-md-2">
                                     <img src="img/record.png" alt="AutoMate Record" >
                                 </div>
 
-                                <div class="col-md-10">
+                                <div class="col-md-10" >
                                     <h5 class="feature-header">AutoMate Record</h5>
                                     <p class="feature-body">
                                         AutoMate allows you to record conversatios with your partner. 
@@ -299,7 +307,7 @@
 
                         <div class="col-md-4 offset-md-2">
 
-                            <div id="library" class="row">
+                            <div id="library" class="row" data-aos="zoom-in-left" data-aos-duration="1000">
 
                                 <div class="col-md-2">
                                     <img src="img/library.png" alt="AutoMate Library" >
@@ -353,7 +361,7 @@
                     <!-- App Screens Slider -->
                     <div id="screen-slider" class="row mx-0">
 
-                        <div class="col-md-9 offset-md-2">
+                        <div class="col-sm col-md-9 offset-md-2">
 
                             <div id="app-screen-glide" class="glide">
 
@@ -394,13 +402,6 @@
                                 </div>
                                 <!-- Slides -->
     
-                                <!-- Slide Controls 
-                                <div class="glide__arrows" data-glide-el="controls">
-                                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-                                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-                                </div>
-                                 Slide Controls -->
-    
                             </div>
 
                         </div>
@@ -421,19 +422,19 @@
                     <!-- Countdown Content -->
                     <div class="row mx-0 text-center justify-content-center">
 
-                        <div id="days" class="col-md-1">
+                        <div id="days" class="col-3 col-md-1" data-aos="fade-up-left" data-aos-duration="1500">
                             <h5 class="countdown-header">08</h5>
                             <h6 class="countdown-body">Days</h6>
                         </div>
-                        <div id="hours" class="col-md-1">
+                        <div id="hours" class="col-3 col-md-1" data-aos="fade-up-left" data-aos-duration="1500">
                             <h5 class="countdown-header">15</h5>
                             <h6 class="countdown-body">Hours</h6>
                         </div>
-                        <div id="minutes" class="col-md-1">
+                        <div id="minutes" class="col-3 col-md-1" data-aos="fade-up-left" data-aos-duration="1500">
                             <h5 class="countdown-header">33</h5>
                             <h6 class="countdown-body">Minutes</h6>
                         </div>
-                        <div id="seconds" class="col-md-1">
+                        <div id="seconds" class="col-3 col-md-1" data-aos="fade-up-left" data-aos-duration="1500">
                             <h5 class="countdown-header">48</h5>
                             <h6 class="countdown-body">Seconds</h6>
                         </div>
@@ -441,7 +442,7 @@
                     </div>
                     <!-- Countdown Content -->
 
-                    <div id="launching-soon" class="text-center">
+                    <div id="launching-soon" class="text-center" >
                         <h1>Launching Soon</h1>
                     </div>
 
@@ -449,17 +450,27 @@
 
                         <!-- Early Access Email -->
                         <div class="col-md-6 offset-md-3 text-center">
-                            <form>
-                                <div id="join-email" class="input-group">
-                                    <input type="email" class="form-control" placeholder="Email"
-                                           aria-label="Recipient's username" aria-describedby="submit-btn">
-                                    <div class="input-group-append">
-                                        <span id="submit-btn-bottom" class="input-group-text" >
-                                            Get Early Access
-                                        </span>
-                                    </div>
+
+                            <form id="form-bottom" name="early-access-form-bottom" method="post" 
+                                action="email.php" data-aos="fade-up" data-aos-duration="2500">
+                                
+                            <div id="" class="input-group">
+                                <input name="email-bottom" type="email" class="form-control" 
+                                        placeholder="Email" aria-label="Subscriber's email" 
+                                        aria-describedby="submit-btn-bottom">
+
+                                <div class="input-group-addon">
+                                    <span class="input-group-btn" >
+                                        <button id="submit-btn-bottom" name="submit-btn-bottom"  
+                                                type="submit">
+                                                Get Early Access
+                                        </button>
+                                    </span>
                                 </div>
+
+                            </div>
                             </form>
+
                         </div>
                         <!-- Early Access Email -->
                         
@@ -480,25 +491,25 @@
             <!-- Top Row -->
             <div class="row mx-0">
 
-                <div class="col-md-3 offset-md-1">
+                <div class="col-6 col-md-3 offset-md-1">
                     <img src="img/automate-r.png" alt="AutoMate Logo">
                 </div>
 
-                <div class="col-md-3 offset-md-5">
+                <div class="col-6 col-md-3 offset-md-5">
 
                     <div class="row mx-0">
 
-                        <div class="col-md-2 text-center">
+                        <div class="col-4 col-md-2 text-center">
                             <a href="#">
                                 <img src="img/twitter-r.svg">
                             </a>
                         </div>
-                        <div class="col-md-2 text-center">
+                        <div class="col-4 col-md-2 text-center">
                             <a href="#">
                                 <img src="img/facebook-r.svg">
                             </a>
                         </div>
-                        <div class="col-md-2 text-center">
+                        <div class="col-4 col-md-2 text-center">
                             <a href="#">
                                 <img src="img/instagram-r.svg">
                             </a>
@@ -511,13 +522,13 @@
 
             <!-- Bottom Row -->
             <div class="row mx-0">
-                <div id="copyright" class="col-md-3 offset-md-1">
+                <div id="copyright" class="col-12 col-md-3 offset-md-1">
                     &copy;2020 AutoMate. All Rights Reserved.
                 </div>
-                <div id="terms" class="col-md-1">
+                <div id="terms" class="col-6 col-md-1">
                     <a href="#">Terms</a>
                 </div>
-                <div id="privacy" class="col-md-1">
+                <div id="privacy" class="col-6 col-md-1">
                     <a href="#">Privacy</a>
                 </div>
             </div>
@@ -531,6 +542,8 @@
     <script src="https://kit.fontawesome.com/ae3427d2c7.js" crossorigin="anonymous"></script>
     <!-- Glide JS  -->
     <script src="assets/glide-3.4.1/dist/glide.min.js"></script>
+    <!-- AOS -->
+    <script src="assets/aos-master/dist/aos.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <!-- Popper.js -->

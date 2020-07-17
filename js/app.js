@@ -1,3 +1,4 @@
+//Initialise glide js slider
 new Glide('.glide', 
     {
         type: 'slider',
@@ -15,3 +16,7 @@ new Glide('.glide',
         }
     }
 ).mount()
+
+
+//Initialise animate on scroll effects
+AOS.init();
