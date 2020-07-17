@@ -15,15 +15,6 @@
 		return $input_error;
 	}
 	
-	/*
-	function _ClearFields($names, $m_names)
-	{
-		for($i = 0; $i < count($names); $i++)
-		{
-			$names[$i] = "";
-		}
-	}*/
-	
 	//Checks for invalid email addresses
 	function _InvalidEmail($email)
 	{
