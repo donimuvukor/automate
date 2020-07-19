@@ -9,7 +9,7 @@ $dbname = 'automate';
 require_once('sitevars.php');
 require_once('functions.php');
 
-var_dump($_POST);
+//var_dump($_POST);
 
 if( isset($_POST['submit']) )
 {
